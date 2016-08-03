@@ -61,3 +61,37 @@ function recursiveQs (arr) {
 
     return (recursiveQs(left)).concat([midPoint], recursiveQs(right));
 }
+
+//counting sort (iterative)
+function countingSort(theArray, maxValue) {
+
+    // array of 0s at indices 0..maxValue
+    var numsToCounts = [];
+    for (var i = 0; i < maxValue + 1; i++) {
+        numsToCounts[i] = 0;
+    }
+
+    // populate numsToCounts
+    theArray.forEach(function(num) {
+        numsToCounts[num] += 1;
+    });
+
+    // populate the final sorted array
+    var sortedArray = [];
+    var currentSortedIndex = 0;
+
+    // for each num in numsToCounts
+    for (var num = 0; num < numsToCounts.length; num++) {
+        var count = numsToCounts[num];
+
+        // for the number of times the item occurs
+        for (var x = 0; x < count; x++) {
+
+            // add it to the sorted array
+            sortedArray[currentSortedIndex] = num;
+            currentSortedIndex++;
+        }
+    }
+
+    return sortedArray;
+}

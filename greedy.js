@@ -35,7 +35,7 @@ if (storage_array[id] > secondOccurance) { //check if this is bigger than second
 //..
 
 
-//calculating max value
+//calculating max value you can take based on weight
 function getTheMax(cakes, weight) {
     var maxMap = [];
 
