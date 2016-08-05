@@ -39,3 +39,38 @@ function getPermutations(string) {
 
     return permutations;
 }
+
+var text = "We came, we saw, we conquered...then we ate Bill's (Mille-Feuille) cake.:"
+
+function isLetter(text) {
+
+}
+
+function mapWords (text) {
+    var cleanText = '';
+
+    for (var i = 0; i < text.length; i++) {
+        var char = text.charAt(i);
+        if ('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '.indexOf(char) >= 0) {
+            cleanText += char;
+        }
+        if (char == '-' || char == '.') {
+            cleanText += ' ';
+        }
+    }
+
+    var textArr = cleanText.toLowerCase().split(' ');
+    var wordCount = new Map();
+
+    for (var j = 0; j < textArr.length; j++) {
+        var word = textArr[i];
+        if
+
+            if(wordCount.has(word)) {
+                wordCount.set(word, wordCount.get(word)+1);
+            } else {
+                wordCount.set(word, 1);
+            }
+    }
+    console.log(textArr);
+}
