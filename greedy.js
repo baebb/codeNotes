@@ -70,3 +70,24 @@ function getTheMax(cakes, weight) {
     
     return maxMap[weight];
 }
+
+//checking for length in lists
+function newsFeed (videoList, imageList, newsList) {
+
+    var lists = [videoList, imageList, newsList];
+
+    function hasItemsRemaining () {
+        return videoList.length > 0 || imageList.length > 0 || newsList.length > 0;
+    }
+
+    while (hasItemsRemaining()) {
+        var hasPushed = false;
+        lists.forEach(function(list) {
+            if (list[0] && list[0].relScore > threshold) {
+                unifiedList.push(list[0].shift());
+                hasPushed = true;
+            }
+        })
+    }
+
+}
