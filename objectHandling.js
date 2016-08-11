@@ -65,3 +65,26 @@ while(data.length) {
 brokerages[brokerName].accounts.find(function (items) {
     return items.accId == ***123;
 }).amount;
+
+
+//fucking watch this trickery
+function bind(func, context) {
+    //console.log(arguments[2]);
+    return func.bind(context, arguments[2]); //binds 'me' to sayname and gives it an arg
+}
+
+// test case - do not modify
+(function () {
+    var sayname = function (one, two) {
+        var string = "I am " + this.name + " " + one + " " + two;
+        console.log(string);
+        return string;
+    };
+
+    var me = { name:"Robert" };
+
+    var boundfunc = bind(sayname, me, "J.");
+    if (boundfunc("Dobbs") === "I am Robert J. Dobbs") { //gives sayname 1 arg
+        console.log("SUCCESS!"); // NEED TO PRINT THIS!
+    }
+})();
