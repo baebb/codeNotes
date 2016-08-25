@@ -14,7 +14,7 @@ Car.prototype.color = null;
 
 //Object.create method
 var human = {
-    //internal create function one arg
+    //internal create property (a function with one arg)
     create: function (value) {
         var instance = Object.create(this);
         //ones one arg
@@ -53,17 +53,33 @@ while(data.length) {
     total += data.amount;
     if (brokerages.hasOwnProperty("data.brokerage")) {
         brokerages[data.brokerage].brokerTotal += data.amount;
-        brokerages[data.brokerage].accounts.push({data.accId : data.amount});
+        brokerages[data.brokerage].accounts.push({ data.accId = data.amount });
     }
     else {
         brokerages[data.brokerage].brokerTotal = data.amount;
-        brokerages[data.brokerage].accounts.push({data.accId : data.amount});
+        brokerages[data.brokerage].accounts.push({ data.accId = data.amount });
     }
 }
 
+//looks like this
+var brokeragesDemo = {
+    "brokerOne": {
+        "brokerTotal": 2332,
+        "accounts":[
+            { "Acc123": 320 },
+            { "Acc223": 463 },
+            { "Acc653": 1203 }
+        ]
+    },
+    "brokerTwo": {
+        //etc
+    }
+};
+
+
 //getting account data
-brokerages[brokerName].accounts.find(function (items) {
-    return items.accId == ***123;
+brokeragesDemo[brokerOne].accounts.find(function (items) {
+    return items.accId == 123;
 }).amount;
 
 

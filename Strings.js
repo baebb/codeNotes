@@ -30,7 +30,7 @@ function getPermutations(string) {
 
     // put the last char in all possible positions for each of the above permutations
     var permutations = new Set();
-    permutationsOfAllCharsExceptLast.forEach(function(permutationOfAllCharsExceptLast) {
+    permutationsOfAllCharsExceptLast.forEach(function (permutationOfAllCharsExceptLast) {
         for (var position = 0; position <= allCharsExceptLast.length; position++) {
             var permutation = permutationOfAllCharsExceptLast.slice(0, position) + lastChar + permutationOfAllCharsExceptLast.slice(position);
             permutations.add(permutation);
@@ -46,7 +46,7 @@ function isLetter(text) {
 
 }
 
-function mapWords (text) {
+function mapWords(text) {
     var cleanText = '';
 
     for (var i = 0; i < text.length; i++) {
@@ -64,13 +64,11 @@ function mapWords (text) {
 
     for (var j = 0; j < textArr.length; j++) {
         var word = textArr[i];
-        if
-
-            if(wordCount.has(word)) {
-                wordCount.set(word, wordCount.get(word)+1);
-            } else {
-                wordCount.set(word, 1);
-            }
+        if (wordCount.has(word)) {
+            wordCount.set(word, wordCount.get(word) + 1);
+        } else {
+            wordCount.set(word, 1);
+        }
     }
     console.log(textArr);
 }
