@@ -1,4 +1,5 @@
 //object creation methods
+//classical
 function Car (model, year, owner) {
     this.model = model;
     this.year = year;
@@ -12,7 +13,7 @@ var lexus = new Car ("Lexus", 1999, "Ken");
 //adding a new property
 Car.prototype.color = null;
 
-//Object.create method
+//Object.create method PROTOTYPICAL
 var human = {
     //internal create property (a function with one arg)
     create: function (value) {
@@ -104,3 +105,26 @@ function bind(func, context) {
         console.log("SUCCESS!"); // NEED TO PRINT THIS!
     }
 })();
+
+var Publisher = {
+    cbArr: [],
+    addCb: function (callbackFunc) {
+        this.cbArr.push(callbackFunc);
+        return this;
+    },
+    removeCb: function (callbackFunc) {
+        this.cbArr.filter(function (value) {
+            if (value == callbackFunc) {
+                return false;
+            } else {
+                return true;
+            }
+        })
+    },
+    fireAll: function () {
+        var argus = arguments;
+        this.cbArr.forEach(function (callbackFunc) {
+            callbackFunc(argus);
+        })
+    }
+}
