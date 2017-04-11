@@ -56,22 +56,7 @@ var bar = true;
 console.log(bar + 0); // returns 1
 console.log(bar + "xyz"); // returns truexyz
 console.log(bar + true); // returns 2
-console.log(bar + false); // returns 1
-
-//shit goes right to left
-var z = 1,
-  y = z = typeof y;
-console.log(y);  //returns undefined
-
-//can't see stuff
-var foo = function bar() {
-  // foo = obj
-  // bar = function
-  console.log(typeof bar()); // Work here :)
-};
-// foo = obj
-// bar is undefined here
-
+`console.log(bar + false); // returns 1
 
 //A cunt's favorite question
 
@@ -90,3 +75,10 @@ var salary = "1000$";
     console.log("My New Salary " + salary); //salary defined now -> returns $5000
   })();
 })();
+
+let a = "3" + 4 + 5;
+// "345"
+let cat = 3 + 4 + "5";
+// "75"
+let dog = 4 + 3 + "5" + 3;
+// "753"
